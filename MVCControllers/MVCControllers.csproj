@@ -89,11 +89,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Images\image1.jpg" />
+    <Content Include="Images\image2.jpg" />
+    <Content Include="Images\image3.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -106,6 +110,8 @@
     <Content Include="Views\Home\Aboutus.cshtml" />
     <Content Include="Views\Home\Contactus.cshtml" />
     <Content Include="Views\Home\Blogs.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\Sample.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
