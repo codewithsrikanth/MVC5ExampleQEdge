@@ -1,0 +1,138 @@
+create database SampleDB
+use SampleDB
+
+create table Employee
+(
+	Eno int,
+	Ename varchar(20),
+	Salary money,
+	Email varchar(50)
+)
+
+insert into Employee values(null,null,null,null)
+
+select * from Employee
+
+create table Product
+(
+	ProductId int primary key,
+	ProductName varchar(30) not null,
+	Email varchar(30) unique,
+	RollNo int unique,
+	Price money check (Price > 0),
+	Qunatity int default 1
+)
+
+select * from Product
+
+--insert into Product values(null,null,null,null,null,null)
+--insert into Product values(101,null,null,null,null,null)
+--insert into Product values(101,'Oneplus 10R',null,null,null,null)
+--insert into Product values(102,'Iphone 15','sri@gmail.com',10,12000,6)
+--insert into Product values(103,'Oppo 13','kanth@gmail.com',20,12000,6)
+insert into Product (ProductId,ProductName,Email,RollNo,Price) 
+values(104,'Laptop','Cherry@gmail.com',30,25000)
+
+drop table Employee
+
+create table Dept
+(
+	DeptID int primary key,
+	DeptName varchar(20)
+)
+insert into Dept values(40,'Administration')
+select * from Dept
+select * from Employees
+create table Employees
+(
+	Eno int primary key,
+	Ename varchar(30),
+	DeptID int
+)
+alter table Employees
+drop column DeptID
+
+alter table Employees
+add DeptID int
+
+alter table Employees
+Add constraint fk_deptId
+FOREIGN key (DeptID)
+references Dept(DeptID)
+
+insert into Employees values(1,'Srikanth',10)
+insert into Employees values(2,'Raju',50)
+
+drop table Employees
+
+
+create table Dept
+(
+	DeptID int primary key,
+	DeptName varchar(20)
+)
+create table Employees
+(
+	Eno int primary key,
+	Ename varchar(30),
+	DeptID int FOREIGN key (DeptID) references Dept(DeptID)
+)
+
+
+
+
+insert into Employees values(101,'Srikanth',10)
+select * from Employees
+
+create procedure sp_Select
+as begin
+select * from Employees
+end
+
+exec sp_Select
+
+select * from Employees where Eno=101
+
+create procedure sp_SelectByID 
+@id int
+as begin
+select * from Employees where Eno=@id
+end
+
+exec [dbo].[sp_SelectByID] 101
+
+create procedure sp_Insert 
+@eno int,@empName varchar(20), @deptId int
+as begin
+insert into Employees values(@eno,@empName,@deptId)
+end
+
+exec sp_Insert 102,'Abhi',20
+
+create procedure sp_Delete @eno int
+as begin
+delete from Employees where Eno=@eno
+end
+
+exec sp_Delete 101
+
+create procedure sp_Update @eno int,@ename varchar(30),@deptID int
+as begin
+update Employees set Ename=@ename, DeptID=@deptID where Eno=@eno
+end
+
+exec sp_Update 102,'Abhay Ram',40
+
+
+select Ename from Employees where Eno=102
+select count(*) from Employees
+
+create procedure sp_GetEmpName
+@eno int,@ename varchar(30) output
+as begin
+select @ename=Ename from Employees where Eno=@eno
+end
+
+declare @ename varchar(30);
+exec sp_GetEmpName @eno=102, @ename=@ename OUTPUT
+select @ename as EmpName
