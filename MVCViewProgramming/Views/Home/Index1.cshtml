@@ -1,0 +1,34 @@
+﻿
+@{string[] courses = { "C#.Net", "ADO.Net", "ASP.Net WebForms", "ASP.Net MVC", "ASP.Net Core","Entity Framework" };
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index1</title>
+</head>
+<body>
+    <div>
+        <h1>Razor Programming Example-2</h1>
+        <hr />
+        <h3>Course List</h3>
+        <ul>
+            @{
+                for (int i = 0; i < courses.Length; i++)
+                {
+                    <li>@courses[i]</li>
+                }
+            }
+        </ul>
+        <br /><br />
+        <ul>
+            <li>@courses[0]</li>
+            <li>@courses[1]</li>
+            <li>@courses[2]</li>
+            <li>@courses[3]</li>
+            <li>@courses[4]</li>
+        </ul>
+
+    </div>
+</body>
+</html>

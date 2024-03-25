@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1>Welcome to Views Development</h1>
+        <h3>Razor Programming</h3>
+        <hr />
+        @* Single Line Syntax *@
+        @{ int x = 10; }
+
+        @* Multi Line Syntax *@
+        @{
+            if (x > 10)
+            {
+                @* Inline Syntax *@
+                <h2>Welcome, Value of x is: @x</h2>
+            }
+            else
+            {
+                <h2>Hello, Value of x is: @x</h2>
+            }
+        }
+    </div>
+</body>
+</html>

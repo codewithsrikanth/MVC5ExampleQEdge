@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index4</title>
+</head>
+<body>
+    <div>
+        <h1>Razor Programming Example-5</h1>
+        <hr />
+        <h3>Product Page</h3>
+        <form action="" method="post">
+            <label>Enter Product Name: </label>
+            <input type="text" name="pName" />
+            <br /><br />
+            <label>Enter Product Price: </label>
+            <input type="text" name="pPrice" />
+            <br /><br />
+            <label>Select Product Quantity: </label>
+            <input type="number" min="1" max="5" name="pQty" />
+            <br /><br />
+            <input type="submit" name="submit" value="Calculate" />
+        </form>
+    </div>
+    @{
+        if (IsPost)
+        {
+            string productName = Request["pName"];
+            double price = Convert.ToDouble(Request["pPrice"]);
+            int qty = Convert.ToInt16(Request["pQty"]);
+            double total = price * qty;
+            <h4>
+                Product Name is: @productName <br />
+                Total Cost is: @total
+            </h4>
+        }
+    }
+</body>
+</html>
