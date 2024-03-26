@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCControllers", "MVCContro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCViewProgramming", "MVCViewProgramming\MVCViewProgramming.csproj", "{0C0BB5A1-C0C0-42FA-899D-CC90BD7213A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCDataSharing", "MVCDataSharing\MVCDataSharing.csproj", "{2834B1D4-66E7-4724-886E-E7F9485DBB8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0C0BB5A1-C0C0-42FA-899D-CC90BD7213A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C0BB5A1-C0C0-42FA-899D-CC90BD7213A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C0BB5A1-C0C0-42FA-899D-CC90BD7213A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2834B1D4-66E7-4724-886E-E7F9485DBB8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2834B1D4-66E7-4724-886E-E7F9485DBB8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2834B1D4-66E7-4724-886E-E7F9485DBB8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2834B1D4-66E7-4724-886E-E7F9485DBB8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

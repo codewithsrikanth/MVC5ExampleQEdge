@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0C0BB5A1-C0C0-42FA-899D-CC90BD7213A3}</ProjectGuid>
+    <ProjectGuid>{2834B1D4-66E7-4724-886E-E7F9485DBB8D}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MVCViewProgramming</RootNamespace>
-    <AssemblyName>MVCViewProgramming</AssemblyName>
+    <RootNamespace>MVCDataSharing</RootNamespace>
+    <AssemblyName>MVCDataSharing</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -106,8 +106,6 @@
     <Content Include="Views\Home\Index1.cshtml" />
     <Content Include="Views\Home\Index2.cshtml" />
     <Content Include="Views\Home\Index3.cshtml" />
-    <Content Include="Views\Home\Index4.cshtml" />
-    <Content Include="Views\Home\Index5.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -132,9 +130,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50425</DevelopmentServerPort>
+          <DevelopmentServerPort>53069</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50425/</IISUrl>
+          <IISUrl>http://localhost:53069/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
