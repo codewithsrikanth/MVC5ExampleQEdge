@@ -1,0 +1,51 @@
+﻿@{ 
+    var products = new[]
+    {
+        new {ProductID=101,ProductName="Oneplus",Price=25000},
+        new {ProductID=102,ProductName="Iphone",Price=45000},
+        new {ProductID=103,ProductName="Nothing",Price=23000},
+        new {ProductID=104,ProductName="Oppo",Price=18000},
+        new {ProductID=105,ProductName="Vivo",Price=13000}
+    };
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetProducts</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container"> 
+        <h1 class="text-center">Product Information</h1>
+        <hr />
+        <table class="table table-bordered table-hover">
+            <thead>
+               <tr>
+                   <th>Product ID</th>
+                   <th>Product Name</th>
+                   <th>Product Price</th>
+                   <th>Operation</th>
+               </tr>
+            </thead>
+            <tbody>
+                @{ 
+                    foreach (var item in products)
+                    {
+                        <tr>
+                            <td>@item.ProductID</td>
+                            <td>@item.ProductName</td>
+                            <td>@item.Price</td>
+                            <td>
+                                @*<a href="/Product/GetProductName/@item.ProductName">Select</a>*@
+                                <a href="/Product/GetNameAndPrice?name=@item.ProductName&price=@item.Price">Select</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
