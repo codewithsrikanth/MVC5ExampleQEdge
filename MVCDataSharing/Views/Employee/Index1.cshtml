@@ -1,0 +1,22 @@
+﻿@* Step-3 *@
+@model string[]
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index1</title>
+</head>
+<body>
+    <div> 
+        <h2>Course List</h2>
+        <ul>
+            @* Step-4 *@
+            @foreach (var item in Model)
+            {
+                <li>@item</li>
+            }
+        </ul>
+    </div>
+</body>
+</html>

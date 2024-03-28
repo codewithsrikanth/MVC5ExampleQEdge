@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h1>Example with ViewData</h1>
+        <hr />
+        <div>
+            StudentID is: @ViewData["StudentID"] <br />
+            StudentName is: @ViewData["StudentName"] <br />
+
+            @{
+                int total = 0;
+                int[] ar = ViewData["Marks"] as int[];
+                foreach (var item in ar)
+                {
+                    total = total + item;
+                }
+                <h4>Total Marks are: @total</h4>
+                int avg = total / ar.Length;
+                <h4>Avergae is: @avg</h4>
+            }
+        </div>
+    </div>
+</body>
+</html>

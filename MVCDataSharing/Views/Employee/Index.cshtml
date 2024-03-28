@@ -1,0 +1,32 @@
+﻿@* Step-3 *@
+@model List<MVCDataSharing.Models.Emp> 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>Example with Strongly Typed View</h1>
+    @* Step-4 *@
+    <div> 
+        <table>
+            <tr>
+                <th>ENo</th>
+                <th>EName</th>
+                <th>Salary</th>
+            </tr>
+            @{ 
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Eno</td>
+                        <td>@item.EmpName</td>
+                        <td>@item.EmpSalary</td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</body>
+</html>
