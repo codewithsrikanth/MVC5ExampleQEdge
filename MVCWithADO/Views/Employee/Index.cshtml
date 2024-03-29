@@ -1,0 +1,49 @@
+﻿@model List<MVCWithADO.Models.Employee>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container"> 
+        <h1 class="text-center">Example with ASP.Net MVC + ADO.Net + Bootstrap Integrations</h1>
+        <hr />
+        <a style="margin-bottom:5px;" href="/Employee/Create" class="btn btn-primary btn-sm">Create a New Employee</a>
+        
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Eno</th>
+                    <th>Ename</th>
+                    <th>Salary</th>
+                    <th>Job</th>
+                    <th>DeptNo</th>
+                    <th class="text-center">Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ 
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Eno</td>
+                            <td>@item.Ename</td>
+                            <td>@item.Salary</td>
+                            <td>@item.Job</td>
+                            <td>@item.DeptID</td>   
+                            <td class="text-center">
+                                <a href="/Employee/Details/@item.Eno" class="btn btn-info">Details</a>
+                                <a href="/Employee/Edit/@item.Eno" class="btn btn-warning">Edit</a>
+                                <a href="/Employee/Delete/@item.Eno" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

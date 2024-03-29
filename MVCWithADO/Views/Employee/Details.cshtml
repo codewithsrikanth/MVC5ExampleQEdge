@@ -1,0 +1,26 @@
+﻿@using MVCWithADO.Models;
+@model Employee
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container"> 
+        <h1>Employee Infromation</h1>
+        <div>
+            Employee ID is: @Model.Eno <br />
+            Employee Name is: @Model.Ename <br />
+            Employee Salary is: @Model.Salary <br />
+            Employee Job is: @Model.Job <br />
+            Employee DeptID is: @Model.DeptID <br />
+        </div>
+        <div>
+            <a href="/" class="btn btn-info">Back to Index</a>
+        </div>
+    </div>
+</body>
+</html>

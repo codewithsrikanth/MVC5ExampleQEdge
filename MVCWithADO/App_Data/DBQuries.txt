@@ -1,0 +1,29 @@
+﻿use CompanyDB
+
+create procedure sp_SelectEmps
+as begin
+select * from Employee
+end
+
+[dbo].[sp_SelectEmps]
+
+create procedure InsertEmp 
+@eno int,@empName varchar(30),@sal money,@job varchar(30),@deptNo int
+as begin
+insert into Employee values(@eno,@empName,@sal,@job,@deptNo)
+end
+
+InsertEmp
+
+create procedure sp_SelectEmp @eno int
+as begin
+select * from Employee where Eno=@eno
+end
+
+sp_SelectEmp 101
+
+create procedure sp_UpdateEmp 
+@eno int,@empName varchar(30),@sal money,@job varchar(30),@deptNo int
+as begin
+update Employee set Ename=@empName,Salary=@sal,Job=@job,DeptID=@deptNo where Eno=@eno
+end

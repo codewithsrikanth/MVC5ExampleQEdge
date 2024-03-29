@@ -1,0 +1,44 @@
+﻿@model MVCWithADO.Models.Employee
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Add New Employee Details</h1>
+        <hr />
+        <form action="" method="post">
+            <div class="mb-3">
+                <label for="eno" class="form-label">Eno</label>
+                <input type="text" class="form-control" id="eno" name="Eno">
+            </div>
+            <div class="mb-3">
+                <label for="ename" class="form-label">Ename</label>
+                <input type="text" class="form-control" id="ename" name="Ename">
+            </div>
+            <div class="mb-3">
+                <label for="salary" class="form-label">Salary</label>
+                <input type="text" class="form-control" id="salary" name="Salary">
+            </div>
+            <div class="mb-3">
+                <label for="job" class="form-label">Job</label>
+                <input type="text" class="form-control" id="job" name="Job">
+            </div>
+            <div class="mb-3">
+                <label for="deptNo" class="form-label">DeptNo</label>
+                <input type="text" class="form-control" id="deptNo" name="DeptID">
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+        @{
+            if (IsPost)
+            {
+                <h4 class="text-danger">@ViewBag.Msg</h4>
+            }
+        }
+    </div>
+</body>
+</html>
