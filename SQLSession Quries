@@ -136,3 +136,178 @@ end
 declare @ename varchar(30);
 exec sp_GetEmpName @eno=102, @ename=@ename OUTPUT
 select @ename as EmpName
+
+
+
+----------------------------
+SQL Server 	=> Data Server
+SSMS		=> Client Tool used to create database and it's objects
+SQL			=> Programming used to query the database and it's obejcts
+
+Quries:
+	- DML
+	- DDL etc.
+Constraints:
+	- Primary
+	- Foriegn
+	- Not Null
+	- Default
+	- Check
+	- Unique etc.
+Stored Procedures
+	- Input Parameters
+	- Output Parameters
+Functions
+	- A function is a reusable piece of code, which can be executed when we call.
+	- There are two types of functions in SQL
+		- User-Defined functions
+			- These are created by the developers
+			- Syntax:
+				create fucntion <name> (parameters)
+				return <datatype>
+				begin
+					--query
+				end
+		- System-Defined functions
+			- These are provided by Microsoft
+			- Examples: SUM(), AVG(), COUNT(),MAX(), CONCAT(),UPPER(),GETDATE() etc.
+
+What are the differences between a stored procedure and function?
+Stored Procedure:
+- It is a set of pre-compiled SQL Statements, those are created in database and executed in DB
+- They can accept multiple inputs and gives mulitple outputs as well.
+- Here we can write DML quries like INSERT, UPDATE,DELETE.
+- These can be called from the frontend like .Net application.
+
+
+Functions:
+- A function is a reusable blocks of code that accept parameters, and performs calculations and returns a single value.
+- Here it can accepts any number of input but it produce single result set
+- Here we can write only SELECT.
+- These can't be called from the frontend application, and it be used only in backend quries.
+
+use CompanyDB
+
+create function AddNumbers(@num1 int,@num2 int)
+returns int
+as  begin
+return @num1+@num2;
+end
+
+select dbo.AddNumbers(100,200);
+
+select * from Employee
+select Ename from Employee where Eno=101
+
+create function dbo.GetEmpNameByID (@id int)
+returns Table
+as 
+return
+(
+	select Ename from Employee where Eno=@id
+)
+
+select * from dbo.GetEmpNameByID(102)
+
+select * from Employee
+select SUM(Salary) from Employee
+select AVG(Salary) from Employee
+select COUNT(*) from Employee
+select Max(Salary) from Employee
+
+
+select * from Employee
+
+
+create function GetEmpsByDept (@deptName varchar(30))
+returns Table
+as 
+return
+(
+	select Ename,Job,Salary
+	from Employee
+	where Dname = @deptName
+)
+
+select * from dbo.GetEmpsByDept('XZY')
+
+Joins:
+- It is mainly used to join the data from more than two table and return as a single table.
+- In relational databases like SQL Server, it is very importent to get the data from mulitple tables.
+- Types of joins
+	- Inner Join		:	It retrived the records that have mactching values in both tables.
+	- Left Join		: 	It retrives all the records from the left table(Emps) and matched records 						from the right(Depts) table
+	- Right Join		:	It retrives all the records from the right table(Depts) and matched 							records from 	the left() table
+
+	- Full Outer Join
+create table Depts
+(
+	DeptID int primary key,
+	DeptName varchar(30)
+)
+
+create table Emps
+(
+	EmployeeID int primary key,
+	FirstName varchar(50),
+	LastName varchar(50),
+	DeptID int foreign key references Depts(DeptID)
+)
+
+alter table Emps
+DROP constraint FK__Emps__DeptID__619B8048
+
+insert into Depts (DeptID,DeptName) values
+(1, 'IT'),
+(2, 'Testing'),
+(3, 'HR')
+
+insert into Depts values(5,'Facilities')
+
+insert into Emps (EmployeeID, FirstName,LastName,DeptID)
+values
+(1, 'Jhon','Doe',1),
+(2, 'Sri','Kanth',2),
+(3, 'Abhay','Ram',1),
+(4, 'Alice','Jhonson',3)
+
+delete from Emps where EmployeeID=4
+insert into Emps values(4, 'Alice','Jhonson',3)
+insert into Emps values(6, 'Ramesh','Raju',9)
+insert into Emps values(7, 'Scott','Ferry',8)
+
+select * from Emps
+select * from Depts
+
+--INNER JOIN
+select Emps.FirstName,Emps.LastName,Depts.DeptName
+from Emps
+inner join Depts ON Emps.DeptID = Depts.DeptID
+
+-- LEFT JOIN
+select Emps.FirstName,Emps.LastName,Depts.DeptName
+from Emps
+Left Join Depts on Emps.DeptID = Depts.DeptID
+
+--Right Join
+select Emps.FirstName,Emps.LastName,Depts.DeptName
+from Emps
+Right Join Depts on Emps.DeptID = Depts.DeptID
+
+--FULL OUTER
+select Emps.FirstName,Emps.LastName,Depts.DeptName
+from Emps
+FULL OUTER JOIN Depts on Emps.DeptID = Depts.DeptID
+
+
+
+
+
+
+
+
+
+
+
+
+
