@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SampleDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Dept">
+          <Key>
+            <PropertyRef Name="DeptID" />
+          </Key>
+          <Property Name="DeptID" Type="int" Nullable="false" />
+          <Property Name="DeptName" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="Eno" />
+          </Key>
+          <Property Name="Eno" Type="int" Nullable="false" />
+          <Property Name="Ename" Type="varchar" MaxLength="30" />
+          <Property Name="DeptID" Type="int" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="30" />
+          <Property Name="RollNo" Type="int" />
+          <Property Name="Price" Type="money" />
+          <Property Name="Qunatity" Type="int" />
+        </EntityType>
+        <Association Name="FK__Employees__DeptI__3A81B327">
+          <End Role="Dept" Type="Self.Dept" Multiplicity="0..1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dept">
+              <PropertyRef Name="DeptID" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="DeptID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SampleDBModelStoreContainer">
+          <EntitySet Name="Dept" EntityType="Self.Dept" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Employees__DeptI__3A81B327" Association="Self.FK__Employees__DeptI__3A81B327">
+            <End Role="Dept" EntitySet="Dept" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SampleDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Dept">
+          <Key>
+            <PropertyRef Name="DeptID" />
+          </Key>
+          <Property Name="DeptID" Type="Int32" Nullable="false" />
+          <Property Name="DeptName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK__Employees__DeptI__3A81B327" FromRole="Dept" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Eno" />
+          </Key>
+          <Property Name="Eno" Type="Int32" Nullable="false" />
+          <Property Name="Ename" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DeptID" Type="Int32" />
+          <NavigationProperty Name="Dept" Relationship="Self.FK__Employees__DeptI__3A81B327" FromRole="Employees" ToRole="Dept" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="RollNo" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Qunatity" Type="Int32" />
+        </EntityType>
+        <Association Name="FK__Employees__DeptI__3A81B327">
+          <End Role="Dept" Type="Self.Dept" Multiplicity="0..1" />
+          <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dept">
+              <PropertyRef Name="DeptID" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="DeptID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SampleDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Depts" EntityType="Self.Dept" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <AssociationSet Name="FK__Employees__DeptI__3A81B327" Association="Self.FK__Employees__DeptI__3A81B327">
+            <End Role="Dept" EntitySet="Depts" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SampleDBModelStoreContainer" CdmEntityContainer="SampleDBEntities">
+          <EntitySetMapping Name="Depts">
+            <EntityTypeMapping TypeName="SampleDBModel.Dept">
+              <MappingFragment StoreEntitySet="Dept">
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="SampleDBModel.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="Eno" ColumnName="Eno" />
+                <ScalarProperty Name="Ename" ColumnName="Ename" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="SampleDBModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="RollNo" ColumnName="RollNo" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Qunatity" ColumnName="Qunatity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

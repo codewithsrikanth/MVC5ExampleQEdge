@@ -1,0 +1,10 @@
+﻿
+Step-1: Create an Empty MVC Web App
+
+Step-2: Add the reference of EntityFramework from Nuget Package Manager.
+
+Step-3: Rt. click on the Models folder -> Click on Add NewItem -> Select Data from right side menu option -> Select ADO.Net Entity Data Model -> Give the name as "CompanyDB" -> Provide the connection string by click on New Connection -> Test the connection -> Select the database objects like table, SPs etc. -> Click on Finish
+
+Step-4: Build the project.
+
+Step-5: Create the controller and Views for CRUD Operations
