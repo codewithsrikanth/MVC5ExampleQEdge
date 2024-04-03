@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+</head>
+<body>
+    <div>
+        <h1>Example with Data Annotations</h1>
+        <hr />
+        <div>
+            <form action="" method="post">
+                <label>Enter Eno</label>
+                <input type="text" name="Eno" />
+                <span style="color:red;"> @Html.ValidationMessage("Eno") </span>
+                <br />
+                <label>Enter Ename</label>
+                <input type="text" name="Ename" />
+                <span style="color:red;"> @Html.ValidationMessage("Ename") </span>
+                <br />
+                <label>Enter Email</label>
+                <input type="text" name="Email" />
+                <span style="color:red;"> @Html.ValidationMessage("Email") </span>
+                <br />
+                <label>Enter Password</label>
+                <input type="text" name="Password" />
+                <span style="color:red;"> @Html.ValidationMessage("Password") </span>
+                <br />
+                <label>Enter Confirm Password</label>
+                <input type="text" name="CofirmPassword" />
+                <span style="color:red;"> @Html.ValidationMessage("CofirmPassword") </span>
+                <br />
+                <label>Enter Salary</label>
+                <input type="text" name="Salary" />
+                <span style="color:red;"> @Html.ValidationMessage("Salary") </span>
+                <br />
+                <label>Enter Age</label>
+                <input type="text" name="age" />
+                <span style="color:red;"> @Html.ValidationMessage("Age") </span>
+                <br />
+                <input type="submit" name="SB1" value="Register" />
+            </form>
+        </div>
+    </div>
+    @{
+        if (IsPost)
+        {
+            @ViewBag.Msg
+        }
+    }
+</body>
+</html>

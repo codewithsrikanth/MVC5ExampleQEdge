@@ -1,0 +1,31 @@
+﻿
+Validations/DataAnnotation in ASP.Net MVC Web Applications:
+- Validation is nothing but verifying user's input.
+- There are two types of validations for a web application
+	- Client Side Validations
+	- Server Side Validations
+- Client side validations can be performed at browser level by using JavaScript and it's related libraries.
+- Implmenting only client side validations is not sufficiant for an web application, so that we will use server side validations.
+- In ASP.Net MVC, to implement server side validations we use "Data Annotations".
+- Data Annotations are the attribute classes, which can be applied to Model class properties.
+- There are different validation attributes/ Data annotations are avaible like
+	[required]
+	[StringLength]
+	[Compare]
+	[EmailAddress] etc.
+- While working with Data Annotation we need to follow below steps
+	- Identify and apply the Data annotations for Model class properties.
+	- Verify the Model State with the Post Request of a Controller by using		(ModelState.IsValid)
+	- Specify the validation mesages for every input control by using 		following HTML Helper methods
+		@Html.ValidationMessage()
+		@Html.ValidationSummery()
+- ModelState is a property which wil takecare of state of the Model, where state means currently available data.
+
+Custom Validations:
+- It is nothing but creating our own validation attribute classes.
+- If all the data annotations are not meet the requirements, then we can create our own data annotation class, and every class is an attribute class.
+Steps to work:
+- Create a class by suffix with "Attribute"
+- Inherit the class by using "ValidationAttribute"
+- Provide the mandatory prameter values using Constructor.
+- Implement the overriding functionality of a virtual method i.e. "IsValid()"
