@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout</title>
+</head>
+<body>
+    <div> 
+        <table border="1" style="width:800px;font-family:Arial;">
+            <tr>
+                <td colspan="2" style="width:800px;text-align:center;background-color:aliceblue">Welcome to Admin Module</td>
+            </tr>
+            <tr>
+                <td style="width:200px;background-color:beige;">
+                    @Html.ActionLink("Home","Index") <br />
+                    @Html.ActionLink("Create New Dept","Create")
+                </td>
+                <td style="width:600px;">
+                    @RenderBody()
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width:800px;text-align:center;color:white;background-color:black;">&copy; Srikanth Rallabandi - 2024 - Dotnet Tutorial</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

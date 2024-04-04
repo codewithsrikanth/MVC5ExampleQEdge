@@ -1,0 +1,28 @@
+﻿@model List<PartialAndLayoutViews.Models.Employee>
+
+<div>
+    <h4>Employee Information</h4>
+    <hr />
+    <table border="1">
+        <tr>
+            <th>Employee No</th>
+            <th>Employee Name</th>
+            <th>Designation</th>
+            <th>Salary</th>
+            <th>Department ID</th>
+        </tr>
+        @{
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Eno</td>
+                    <td>@item.Ename</td>
+                    <td>@item.Job</td>
+                    <td>@item.Salary</td>
+                    <td>@item.DeptID</td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+
