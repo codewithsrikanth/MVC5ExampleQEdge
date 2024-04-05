@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Students>
+  <Student>
+    <Name>Srikanth</Name>
+    <Age>34</Age>
+  </Student>
+  <Student>
+    <Name>Raju</Name>
+    <Age>36</Age>
+  </Student>
+  <Student>
+    <Name>Haritha</Name>
+    <Age>29</Age>
+  </Student>
+  <Student>
+    <Name>Diyansh</Name>
+    <Age>5</Age>
+  </Student>
+  <Student>
+    <Name>Atresh</Name>
+    <Age>31</Age>
+  </Student>
+  <Student>
+    <Name>Praveen</Name>
+    <Age>25</Age>
+  </Student>
+</Students>
