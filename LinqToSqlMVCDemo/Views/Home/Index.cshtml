@@ -1,0 +1,57 @@
+﻿@model IEnumerable<LinqToSqlMVCDemo.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Eno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Job)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeptID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Eno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ename)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Job)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeptID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Eno }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Eno }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Eno })
+        </td>
+    </tr>
+}
+
+</table>
