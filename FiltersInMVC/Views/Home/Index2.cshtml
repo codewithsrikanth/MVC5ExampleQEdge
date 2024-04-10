@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index2";
+}
+
+<h2>Index2</h2>
+<form action="" method="post">
+    <input type="submit" name="sb1" value="Connect" />
+</form>
+@{
+    if (IsPost)
+    {
+        @ViewBag.Msg
+    }
+}
+

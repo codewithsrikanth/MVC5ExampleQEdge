@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index1";
+}
+
+<h2>Index1</h2>
+<h3>Example with Validate Input</h3>
+<hr />
+<form action="" method="post">
+    <label>Enter your name: </label>
+    <input type="text" name="empName" />
+    <br />
+    <input type="submit" name="SB1" value="Submit" />
+</form>
+@{
+    if(IsPost)
+    {
+    <span>Welcome Mr/Mrs.</span> @ViewBag.EmpName
+    }
+}
+

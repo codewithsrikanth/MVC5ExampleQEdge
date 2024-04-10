@@ -1,0 +1,18 @@
+﻿<h1>Example with Output Cache</h1>
+<hr />
+<div>
+    Get Request Time:  @ViewBag.CurrentTime
+    <br />
+    <br />
+    <form action="" method="post">
+        <input type="text" placeholder="Enter Eno" name="Eno" id="Eno"  />
+        <br />
+        <input type="submit" name="SB1" value="Get Updated Time" />
+    </form>
+    @{
+        if (IsPost)
+        {
+            <span>Post Request Time: </span> @ViewBag.UpdatedTime
+        }
+    }
+</div>
