@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqToSqlMVCDemo", "LinqToS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiltersInMVC", "FiltersInMVC\FiltersInMVC.csproj", "{A0B1CEC6-0353-4384-9128-3706053C6FC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityInMVC", "SecurityInMVC\SecurityInMVC.csproj", "{0AC84C07-5902-427F-A63E-672BB9715A60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{A0B1CEC6-0353-4384-9128-3706053C6FC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0B1CEC6-0353-4384-9128-3706053C6FC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0B1CEC6-0353-4384-9128-3706053C6FC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AC84C07-5902-427F-A63E-672BB9715A60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AC84C07-5902-427F-A63E-672BB9715A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AC84C07-5902-427F-A63E-672BB9715A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AC84C07-5902-427F-A63E-672BB9715A60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
