@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiltersInMVC", "FiltersInMV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityInMVC", "SecurityInMVC\SecurityInMVC.csproj", "{0AC84C07-5902-427F-A63E-672BB9715A60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCwithjQueryAJAX", "MVCwithjQueryAJAX\MVCwithjQueryAJAX.csproj", "{F1F4875E-28C5-495D-B37A-446A245BDC07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{0AC84C07-5902-427F-A63E-672BB9715A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AC84C07-5902-427F-A63E-672BB9715A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AC84C07-5902-427F-A63E-672BB9715A60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1F4875E-28C5-495D-B37A-446A245BDC07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1F4875E-28C5-495D-B37A-446A245BDC07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1F4875E-28C5-495D-B37A-446A245BDC07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1F4875E-28C5-495D-B37A-446A245BDC07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using FiltersInMVC.Filters;
+using System;
 using System.Data.SqlClient;
-using System.Data.SqlTypes;
 using System.Web.Mvc;
 
 namespace FiltersInMVC.Controllers
@@ -62,6 +62,17 @@ namespace FiltersInMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(string username,string password)
         {
+            return View();
+        }
+
+        [MyCustomFilter]
+        public ActionResult Count()
+        {
+            int x = 0;
+            for (int i = 0; i < 100000; i++)
+            {
+                x = +i;
+            }
             return View();
         }
     }

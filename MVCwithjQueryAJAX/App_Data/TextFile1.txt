@@ -1,0 +1,53 @@
+﻿Custom Filters:
+- A filter is an attribute class, whcih can be used to perform pre or post actions.
+- types of filters
+	- Authorization Filter		-	IAutheorization
+									- OnAuthorization()
+		
+	- Action Filter				-	IActionFilter
+									- OnActionExecuting()
+									- OnActionExecuted()
+	- Result Filter				-	IResultFilter
+									- OnResultExecuting()
+									- OnResultExecuted()
+	- Exception Filter
+							-	IExceptionFilter
+									- OnException()
+- There are two ways we can use fileter
+	- Pre-defined : It was created by Microsoft
+		- [OutputCache]
+		- [AntiForgeryToken]
+		- [ValidateInput]
+		- [Authorize]
+		- [AllowAnonymous] etc.
+- If the above filters are not meet our requirement, then we create our own filter
+- To create custom filter
+	- Create a class that must be inherited from FilterAttribute and IActionFilter interface
+	- Use the custom filter class by using attributes like [CustomFilter]
+	- Custom filter can be applied based on the requirement.
+
+-------------------------------------------------------------------------------------------------------
+What is Ajax?
+- AJAX stands for asynchronus javascript and xml.
+- It is a client based technique used to connect with the server asynchronusly
+- It is also used to implement the partial page updates
+- Due to that it reduce the network traffic, burden on server and also we get quick response.
+
+How to implement?
+- AJAX can be implemented by using javascript.
+- Javascript is a bit complex so that we use jquery, angular, react js, vue js and other libries.
+
+What is jQuery?
+- It is a client side library, whcih contains collection of pre-defined functions
+- Examples:
+	- val()
+	- text()
+	- ajax()
+	- fadeIn()
+	- fadeOut() etc.
+
+
+
+
+
+
