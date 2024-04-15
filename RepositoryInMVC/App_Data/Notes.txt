@@ -1,0 +1,15 @@
+﻿Step-1: Create an ASP.Net Empty MVC web application
+Step-2: By using Entity Framework DB First Approch get the required data from the DB
+Step-3: Create a folder with the name repository and add the follwoing folders and files
+			- ViewModels
+				- EmpViewModel
+			- Interfaces
+				- IEmployeeRepository
+			- Implementation
+				- EmployeeRepository
+Step-4: Create the controller and Views
+
+
+Steps to add Areas:
+- Rt. click on the solution -> Click on Add -> Click New  Scafflod Item -> Select Area -> Provide the name
+Note: This will create a seperate MVC folders for the module and we can use it
