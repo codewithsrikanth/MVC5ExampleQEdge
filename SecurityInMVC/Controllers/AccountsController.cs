@@ -1,4 +1,6 @@
 ﻿using SecurityInMVC.Models;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -16,8 +18,20 @@ namespace SecurityInMVC.Controllers
         {
             using (SecurityDBEntities context = new SecurityDBEntities())
             {
-                bool isValiduser = context.Users.Any(user=>user.Username.ToLower() == model.UserName.ToLower() && user.Password.ToLower() == model.Password.ToLower());
-                if(isValiduser)
+                var isValiduser = false;
+                List<User> users = context.Users.ToList();
+                foreach (var item in users)
+                {
+                    if (item.Username == model.UserName && item.Password == model.Password)
+                    {
+                        isValiduser = true;
+                        break;
+                    }
+                }
+
+                //bool isValiduser = context.Users.Any(user=>user.Username.ToLower() == model.UserName.ToLower() && user.Password.ToLower() == model.Password.ToLower());
+
+                if (isValiduser)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, false);
                     return RedirectToAction("Index", "Employees");
